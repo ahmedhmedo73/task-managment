@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AuthModule } from './featuers/auth/auth.module';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthModule } from './features/auth/auth.module';
+import { DashboardModule } from './features/dashboard/dashboard.module';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AuthModule, HttpClientModule],
+  imports: [RouterOutlet, HttpClientModule, AuthModule, DashboardModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

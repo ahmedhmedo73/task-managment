@@ -3,12 +3,12 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideStore } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
+import { reducers, metaReducers } from './core/reducers';
 import { provideEffects } from '@ngrx/effects';
-import { AuthEffects } from './featuers/auth/store/auth.effects';
 import { MessageService } from 'primeng/api';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { authInterceptor } from './core/interceptors/auth.interceptor';
+import { AuthEffects } from './features/auth/store/auth.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
