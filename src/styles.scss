@@ -1,4 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
+@import "bootstrap/scss/bootstrap";
+
+.btn-primary,
+.p-button {
+  border-radius: 20px;
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  border: 0;
+  color: white;
+  padding: 9px 25px;
+  font-weight: normal;
+  &:hover,
+  &:focus,
+  &:active,
+  &:enabled:hover {
+    background-color: var(--primary-color) !important;
+  }
+}
+.btn-outline-primary {
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 9px 25px;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: white !important;
+    color: var(--primary-color) !important;
+    border: 1px solid var(--primary-color) !important;
+  }
+}
