@@ -1,7 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
-
-/* Importing Bootstrap SCSS file. */
 @import "bootstrap/scss/bootstrap";
+@import "assets/scss/sizing.scss";
+@import "assets/scss/spacing.scss";
+@import "primeicons/primeicons.css";
 
 .btn-primary,
 .p-button {
