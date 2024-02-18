@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { TasksService } from '../../services/tasks.service';
 
 @Component({
   selector: 'app-header-index',
@@ -8,4 +9,9 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderIndexComponent {
   faPlus = faPlus;
+  constructor(private tasksService: TasksService) {}
+
+  openTaskFormDialog(): void {
+    this.tasksService.openTaskformDialog();
+  }
 }

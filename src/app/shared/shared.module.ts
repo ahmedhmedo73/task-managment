@@ -1,25 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
-import { VirtualScrollerModule } from 'primeng/virtualscroller';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ButtonModule } from 'primeng/button';
-import { SkeletonModule } from 'primeng/skeleton';
-import { ToastModule } from 'primeng/toast';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 let modules = [
   CommonModule,
-  FormsModule,
-  ReactiveFormsModule,
   DialogModule,
-  VirtualScrollerModule,
+  FontAwesomeModule,
   ButtonModule,
-  ToastModule,
-  SkeletonModule
+  ReactiveFormsModule,
+  FormsModule,
+  InputTextareaModule,
 ];
 
 @NgModule({
-  declarations: [],
   imports: modules,
   exports: modules,
 })

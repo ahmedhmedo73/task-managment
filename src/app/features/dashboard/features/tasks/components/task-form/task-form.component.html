@@ -1,0 +1,30 @@
+<p-dialog
+  [draggable]="false"
+  [resizable]="false"
+  [modal]="true"
+  [dismissableMask]="false"
+  [style]="{ width: '400px' }"
+  [(visible)]="taskFormDialogVisibility"
+  (onHide)="closeDialog()"
+  [appendTo]="'body'"
+  [header]="'Add Task'"
+>
+  <form
+    class="form-container d-flex flex-column justify-content-center gap-2 px-2 mt-2"
+    [formGroup]="taskForm"
+  >
+    <textarea
+      rows="5"
+      cols="30"
+      pInputTextarea
+      formControlName="task"
+    ></textarea>
+
+    <div class="form-group d-flex justify-content-center">
+      <p-button label="Add" [styleClass]="'btn btn-primary'"></p-button>
+      <!-- [loading]="httpLoading"
+        (onClick)="login()"
+        [disabled]="loginForm.invalid" -->
+    </div>
+  </form>
+</p-dialog>
