@@ -1,0 +1,30 @@
+.todo-list {
+  border: 1px solid #cad9f6;
+  background: linear-gradient(0deg, #eef2fc, #eef2fc),
+    linear-gradient(0deg, #cad9f6, #cad9f6);
+  .list-title {
+    color: #14367b;
+  }
+}
+.in-progress-list {
+  border: 1px solid #ffe4c2;
+  background: linear-gradient(0deg, #fff6eb, #fff6eb),
+    linear-gradient(0deg, #ffe4c2, #ffe4c2);
+  .list-title {
+    color: #8f4f00;
+  }
+}
+.done-list {
+  border: 1px solid #fad0c6;
+  background: linear-gradient(0deg, #fdf0ec, #fdf0ec),
+    linear-gradient(0deg, #fad0c6, #fad0c6);
+  .list-title {
+    color: #81290e;
+  }
+}
+.list-title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0em;
+}
