@@ -1,21 +1,51 @@
-<nav
-  class="navbar navbar-light top-0 h-100px px-64px bg-white position-sticky border-bottom"
+<header
+  class="navbar navbar-expand-lg bd-navbar sticky-top h-100px py-0 bg-white border-bottom"
 >
-  <div class="container-fluid">
+  <nav class="container-fluid navbar navbar-light px-3 px-md-64px h-100">
     <div class="row w-100">
+      <div class="col-auto">
+        <div class="bd-navbar-toggle">
+          <button
+            class="navbar-toggler p-2 h-48px"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#bdSidebar"
+            aria-controls="bdSidebar"
+            aria-label="Toggle docs navigation"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              class="bi"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+              ></path>
+            </svg>
+
+            <span class="d-none fs-6 pe-1">Browse</span>
+          </button>
+        </div>
+      </div>
       <div class="col p-0">
         <span class="p-input-icon-right h-48px w-100">
           <input
             type="text"
             pInputText
             [(ngModel)]="searchKeyword"
-            class="w-100"
+            class="w-100 px-12px"
             placeholder="Search"
           />
           <i class="pi pi-search text-black fw-bold"></i>
         </span>
       </div>
-      <div class="col-auto p-0 ps-82px d-flex align-items-center gap-12px">
+      <div
+        class="col-auto p-0 ps-4 ps-md-82px d-flex align-items-center gap-12px"
+      >
         <fa-icon [icon]="faBell" [size]="'xl'"></fa-icon>
         <img
           src="assets/images/UserAvatar.png"
@@ -24,5 +54,5 @@
         />
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</header>

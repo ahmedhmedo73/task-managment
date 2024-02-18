@@ -1,7 +1,9 @@
 @import "bootstrap/scss/bootstrap";
+@import "primeicons/primeicons.css";
 @import "assets/scss/sizing.scss";
 @import "assets/scss/spacing.scss";
-@import "primeicons/primeicons.css";
+@import "assets/scss/borders.scss";
+@import "assets/scss/variables.scss";
 
 .btn-primary,
 .p-button {
@@ -33,4 +35,17 @@
     color: var(--primary-color) !important;
     border: 1px solid var(--primary-color) !important;
   }
+}
+
+.p-inputtext {
+  border: 1px solid #efefef;
+  border-radius: 8px;
+  padding: 12px 24px;
+
+  &::placeholder {
+    color: #999999;
+  }
+}
+.z-1111 {
+  z-index: 1111;
 }
