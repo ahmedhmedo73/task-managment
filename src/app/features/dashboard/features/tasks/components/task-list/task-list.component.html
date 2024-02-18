@@ -1,28 +1,28 @@
-<div class="container-fluid p-0">
+<div class="container-fluid p-0 mb-5">
   <div class="row g-4">
+    @for(list of taskList; track list.icon){
     <div class="col-md">
-      <div class="todo-list border-radius-8px">
-        <div class="task-list-header d-flex gap-3 p-12px mb-14px">
-          <img src="assets/images/tasks/toDo.svg" alt="" />
-          <h5 class="list-title m-0">To do</h5>
+      <div
+        class="border-radius-8px p-12px"
+        [ngStyle]="{ border: list.border, background: list.background }"
+      >
+        <div class="task-list-header d-flex gap-3 mb-14px">
+          <img [src]="list.icon" [alt]="list.category" />
+          <h5 class="list-title m-0" [ngStyle]="{ color: list.color }">
+            {{ list.category }}
+          </h5>
+        </div>
+        <div class="task-card-container d-flex flex-column gap-3">
+          @for(task of list.tasks; track task.image){
+          <app-task-card
+            [image]="task.image"
+            [task]="task.title"
+            [border]="list.border"
+          />
+          }
         </div>
       </div>
     </div>
-    <div class="col-md">
-      <div class="in-progress-list border-radius-8px p-0">
-        <div class="task-list-header d-flex gap-3 p-12px mb-14px">
-          <img src="assets/images/tasks/inProgress.svg" alt="" />
-          <h5 class="list-title m-0">In progress</h5>
-        </div>
-      </div>
-    </div>
-    <div class="col-md">
-      <div class="done-list border-radius-8px p-0">
-        <div class="task-list-header d-flex gap-3 p-12px mb-14px">
-          <img src="assets/images/tasks/done.svg" alt="" />
-          <h5 class="list-title m-0">Done</h5>
-        </div>
-      </div>
-    </div>
+    }
   </div>
 </div>

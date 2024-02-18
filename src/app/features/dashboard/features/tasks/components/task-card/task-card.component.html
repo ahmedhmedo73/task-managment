@@ -1,0 +1,19 @@
+<div
+  class="task-card border-radius-8px bg-white p-12px d-flex flex-column gap-2"
+  [ngStyle]="{ border }"
+>
+  <div class="task-header d-flex justify-content-between">
+    <img [src]="image" alt="" />
+    <div class="task-actions d-flex gap-1">
+      <button class="btn p-0">
+        <img src="assets/images/edit.svg" alt="" />
+      </button>
+      <button class="btn p-0">
+        <img src="assets/images/delete.svg" alt="" />
+      </button>
+    </div>
+  </div>
+  <p class="m-0">
+    {{ task }}
+  </p>
+</div>
