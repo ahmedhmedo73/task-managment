@@ -29,13 +29,12 @@ export function storageMetaReducer(
 
     if (onInit) {
       onInit = false;
-      let savedState =
-        JSON.parse(localStorage.getItem('__storage__') || '{}') || {};
+      let savedState = JSON.parse(localStorage.getItem('__storage__') || '{}');
 
-      if (savedState.tasks.tasks.length == 0) {
+      if (Object.keys(savedState).length == 0) {
+        savedState = nextState;
         savedState.tasks.tasks = initTaskList;
       }
-
       return savedState;
     }
 
