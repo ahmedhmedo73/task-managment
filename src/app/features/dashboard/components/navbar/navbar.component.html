@@ -32,20 +32,30 @@
         </div>
       </div>
       <div class="col p-0">
-        <span class="p-input-icon-right h-48px w-100">
+        <span
+          class="h-48px w-100"
+          [ngClass]="
+            ('dir' | translate) == 'rtl'
+              ? 'p-input-icon-left'
+              : 'p-input-icon-right'
+          "
+        >
           <input
             type="text"
             pInputText
             [(ngModel)]="searchKeyword"
             class="w-100 px-12px"
-            placeholder="Search"
+            [placeholder]="'Search' | translate"
           />
           <i class="pi pi-search text-black fw-bold"></i>
         </span>
       </div>
       <div
-        class="col-auto p-0 ps-4 ps-md-82px d-flex align-items-center gap-12px"
+        class="col-auto w-200px d-flex align-items-center justify-content-end gap-12px"
       >
+        <span class="cursor-pointer" (click)="changeLanguage()">{{
+          "language" | translate
+        }}</span>
         <fa-icon [icon]="faBell" [size]="'xl'"></fa-icon>
         <img
           src="assets/images/UserAvatar.png"

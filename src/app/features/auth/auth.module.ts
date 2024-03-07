@@ -12,6 +12,7 @@ import { AuthReducer } from './store/auth.reducers';
 import { AuthEffects } from './store/auth.effects';
 import { MessageService } from 'primeng/api';
 import { HttpClientModule } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [AuthLayoutComponent, LoginComponent],
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     ButtonModule,
     RouterModule.forChild(routes),
+    TranslateModule,
   ],
   providers: [MessageService],
 })

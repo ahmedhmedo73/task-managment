@@ -11,22 +11,26 @@ import { AuthService } from '../../../auth/services/auth/auth.service';
 export class SidebarComponent {
   links: any[] = [
     {
-      label: 'dashboard',
+      label_en: 'dashboard',
+      label_ar: 'لوحة التحكم',
       icon: 'assets/images/sidebar/dashboard.svg',
       routerLink: '/dashboard',
     },
     {
-      label: 'projects',
+      label_en: 'projects',
+      label_ar: 'المشاريع',
       icon: 'assets/images/sidebar/projects.svg',
       routerLink: '/dashboard/projects',
     },
     {
-      label: 'tasks',
+      label_en: 'tasks',
+      label_ar: 'المهمات',
       icon: 'assets/images/sidebar/tasks.svg',
       routerLink: '/dashboard/tasks',
     },
     {
-      label: 'calendar',
+      label_en: 'calendar',
+      label_ar: 'التقويم',
       icon: 'assets/images/sidebar/calendar.svg',
       routerLink: '/dashboard/calendar',
     },

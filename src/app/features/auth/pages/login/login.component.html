@@ -2,21 +2,27 @@
   class="h-100 d-flex flex-column justify-content-center gap-4"
   [formGroup]="loginForm"
 >
-  <h2>Welcome back!</h2>
-  <p class="m-0 text-gray">Please login to access your Task Managament</p>
+  <h2>{{ "Welcome back!" | translate }}</h2>
+  <p class="m-0 text-gray">
+    {{ "Please login to access your Task Managament" | translate }}
+  </p>
   <div class="form-group">
-    <label for="username" class="form-label text-gray">Username</label>
+    <label for="username" class="form-label text-gray">{{
+      "Username" | translate
+    }}</label>
     <input
       type="text"
       name="username"
       id="username"
       class="form-control"
       formControlName="email"
-      placeholder="username..."
+      [placeholder]="('username' | translate) + '...'"
     />
   </div>
   <div class="form-group">
-    <label for="password" class="form-label text-gray">Password</label>
+    <label for="password" class="form-label text-gray">{{
+      "Password" | translate
+    }}</label>
     <input
       type="password"
       name="password"
@@ -26,9 +32,11 @@
     />
   </div>
   <div class="form-group d-flex justify-content-between align-items-center">
-    <a class="forgot-password text-decoration-none">Forgot password?</a>
+    <a class="forgot-password text-decoration-none">{{
+      "Forgot password?" | translate
+    }}</a>
     <p-button
-      label="LOGIN"
+      [label]="'LOGIN' | translate"
       [styleClass]="'btn btn-login'"
       [loading]="httpLoading"
       (onClick)="login()"

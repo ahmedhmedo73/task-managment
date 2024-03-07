@@ -32,7 +32,7 @@
             <img src="assets/images/Logo.png" alt="" class="w-190px" />
           </a>
           <div class="d-flex flex-column justify-content-between w-100 h-100">
-            <ul class="nav nav-pills flex-column w-100 gap-20px" id="menu">
+            <ul class="nav nav-pills flex-column w-100 gap-20px p-0" id="menu">
               @for (link of links; track link.label){
 
               <li class="nav-item bg-light border-radius-8px">
@@ -44,7 +44,7 @@
                 >
                   <img [src]="link.icon" alt="" />
                   <span class="text-capitalize fs-5 fw-medium">{{
-                    link.label
+                    link["label_" + ("lang" | translate)]
                   }}</span>
                 </a>
               </li>
@@ -55,7 +55,7 @@
               (click)="logout()"
             >
               <img src="assets/images/sidebar/logout.svg" alt="" />
-              <span class="text-secondary"> Log out </span>
+              <span class="text-secondary"> {{ "Log out" | translate }} </span>
             </button>
           </div>
         </div>

@@ -5,7 +5,8 @@ export interface ITasks {
   tasks: ITask[];
 }
 export interface ICategory {
-  name: string;
+  name_ar: string;
+  name_en: string;
   border: string;
   background: string;
   color: string;

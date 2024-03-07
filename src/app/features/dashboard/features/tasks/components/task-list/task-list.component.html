@@ -10,9 +10,20 @@
         }"
       >
         <div class="task-list-header d-flex gap-3 mb-14px">
-          <img [src]="list.category.icon" [alt]="list.category.name" />
+          <img
+            [src]="list.category.icon"
+            [alt]="
+              ('lang' | translate) == 'ar'
+                ? list.category.name_ar
+                : list.category.name_en
+            "
+          />
           <h5 class="list-title m-0" [ngStyle]="{ color: list.category.color }">
-            {{ list.category.name }}
+            {{
+              ("lang" | translate) == "ar"
+                ? list.category.name_ar
+                : list.category.name_en
+            }}
           </h5>
         </div>
         <div class="task-card-container d-flex flex-column gap-3">

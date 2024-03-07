@@ -8,13 +8,18 @@ import { AuthReducer } from '../../features/auth/store/auth.reducers';
 import { TasksReducer } from '../../features/dashboard/features/tasks/store/tasks.reducers';
 import { ITasksState } from '../../features/dashboard/features/tasks/store/tasks.state';
 import { IAuthState } from '../../features/auth/store/auth.state';
+import { AppReducer } from './app.redusers';
+import { IAppState } from './app.state';
+import { ITasks } from '../../features/dashboard/features/tasks/models/tasks.interface';
 
 export interface State {
   tasks: ITasksState;
   auth: IAuthState;
+  app: IAppState;
 }
 
 export const reducers: ActionReducerMap<State> = {
+  app: AppReducer,
   auth: AuthReducer,
   tasks: TasksReducer,
 };
@@ -45,10 +50,11 @@ export function storageMetaReducer(
 
 export const metaReducers: MetaReducer<State>[] = [storageMetaReducer];
 
-const initTaskList = [
+const initTaskList: ITasks[] = [
   {
     category: {
-      name: 'To do',
+      name_ar: 'جديد',
+      name_en: 'To do',
       border: '1px solid #cad9f6',
       background:
         'linear-gradient(0deg, #eef2fc, #eef2fc),linear-gradient(0deg, #cad9f6, #cad9f6)',
@@ -88,7 +94,8 @@ const initTaskList = [
   },
   {
     category: {
-      name: 'In progress',
+      name_ar: 'قيد التنفيذ',
+      name_en: 'In progress',
       border: '1px solid #ffe4c2',
       background:
         'linear-gradient(0deg, #fff6eb, #fff6eb), linear-gradient(0deg, #ffe4c2, #ffe4c2)',
@@ -128,7 +135,8 @@ const initTaskList = [
   },
   {
     category: {
-      name: 'Done',
+      name_ar: 'مكتمل',
+      name_en: 'Done',
       border: '1px solid #ffe4c2',
       background:
         'linear-gradient(0deg, #fff6eb, #fff6eb), linear-gradient(0deg, #ffe4c2, #ffe4c2)',
