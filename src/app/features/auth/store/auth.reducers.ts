@@ -5,23 +5,10 @@ import { IAuthState } from './auth.state';
 export const initialUsersState: IAuthState = {
   token: '',
   isLoading: false,
+  isLoggedIn: false,
 };
 export const AuthReducer = createReducer<IAuthState>(
   initialUsersState,
-  on(AuthActions.requestFail, (state) => {
-    return {
-      ...state,
-      isLoading: false,
-    };
-  }),
-  on(AuthActions.setToken, (state, { token }) => {
-    // cookieService.set('token', token);
-    return {
-      ...state,
-      token,
-    };
-  }),
-
   on(AuthActions.login, (state) => {
     return {
       ...state,
@@ -29,11 +16,25 @@ export const AuthReducer = createReducer<IAuthState>(
     };
   }),
   on(AuthActions.loginSuccess, (state, { loginResponse }) => {
-    // cookieService.set('token', loginResponse.token);
+    localStorage.setItem('token', loginResponse.token);
     return {
       ...state,
       isLoading: false,
+      isLoggedIn: true,
       token: loginResponse.token,
+    };
+  }),
+  on(AuthActions.requestFail, (state) => {
+    return {
+      ...state,
+      isLoading: false,
+    };
+  }),
+  on(AuthActions.logout, (state) => {
+    return {
+      ...state,
+      isLoggedIn: false,
+      token: '',
     };
   })
 );

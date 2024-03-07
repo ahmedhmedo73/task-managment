@@ -1,21 +1,20 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
-import { SsrCookieService } from 'ngx-cookie-service-ssr';
 import { SharedService } from '../../shared/services/shared/shared.service';
+import { AuthService } from '../../features/auth/services/auth/auth.service';
 
-export const authGuard: CanActivateFn = (route, state) => {
-  const cookieService: SsrCookieService = inject(SsrCookieService);
-  const token = cookieService.get('token') || '';
+export const authGuard: CanActivateFn = () => {
   const router: Router = inject(Router);
   const sharedService: SharedService = inject(SharedService);
-  if (!token) {
-    router.navigateByUrl('/auth/login');
+  const authService: AuthService = inject(AuthService);
+
+  if (!authService.isLoggoedIn) {
     sharedService.show({
       severity: 'error',
       summary: 'Authentication',
       detail: 'Please log in',
     });
-    return false;
+    router.navigateByUrl('/auth/login');
   }
   return true;
 };

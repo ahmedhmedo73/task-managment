@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [LayoutComponent, SidebarComponent, NavbarComponent],
@@ -20,6 +21,7 @@ import { InputTextModule } from 'primeng/inputtext';
     ReactiveFormsModule,
     FormsModule,
     InputTextModule,
+    SharedModule,
   ],
 })
 export class DashboardModule {}

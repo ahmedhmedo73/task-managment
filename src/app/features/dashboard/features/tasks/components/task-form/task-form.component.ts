@@ -37,6 +37,7 @@ export class TaskFormComponent {
   }
   createTaskForm(): void {
     this.taskForm = this.formBuilder.group({
+      id: 0,
       categoryId: 0,
       title: ['', Validators.required],
       image: [this.defaultTaskImage, Validators.required],
@@ -78,6 +79,8 @@ export class TaskFormComponent {
     );
   }
   submit(): void {
+    console.log(this.taskFormMode, 'this.taskFormMode');
+
     switch (this.taskFormMode) {
       case 'Add':
         this.addTask();
@@ -95,6 +98,8 @@ export class TaskFormComponent {
   }
   updateTask(): void {
     if (this.taskForm.valid) {
+      console.log(this.taskForm.value, 'this.taskForm.value');
+
       this.store.dispatch(
         UpdateTask({
           task: this.taskForm.value,

@@ -28,7 +28,7 @@ export class AuthEffects {
         this.sharedService.show({
           severity: 'success',
           summary: 'Login',
-          detail: 'Log in successfully',
+          detail: 'Logged in successfully',
         });
 
         this.router.navigateByUrl('');

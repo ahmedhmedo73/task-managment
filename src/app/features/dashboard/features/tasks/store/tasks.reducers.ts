@@ -37,6 +37,7 @@ export const TasksReducer = createReducer<ITasksState>(
   }),
   on(TasksActions.UpdateTask, (state, { task }) => {
     let tasks: ITasks[] = JSON.parse(JSON.stringify(state.tasks));
+
     tasks[task.categoryId].tasks[task.id] = task;
     return {
       ...state,

@@ -39,6 +39,7 @@
                 <a
                   [routerLink]="link.routerLink"
                   routerLinkActive="bg-primary text-white"
+                  [routerLinkActiveOptions]="{ exact: true }"
                   class="nav-link px-28px d-flex gap-12px"
                 >
                   <img [src]="link.icon" alt="" />
@@ -51,6 +52,7 @@
             </ul>
             <button
               class="btn btn-secondary d-flex gap-12px h-40px mb-40px border-radius-8px py-8px px-28px"
+              (click)="logout()"
             >
               <img src="assets/images/sidebar/logout.svg" alt="" />
               <span class="text-secondary"> Log out </span>

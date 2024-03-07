@@ -27,7 +27,9 @@ export class TaskCardComponent {
         taskFormMode: 'Update',
       })
     );
-    this.store.dispatch(SetSelectedTask({ task: this.task }));
+    this.store.dispatch(
+      SetSelectedTask({ task: { ...this.task, id: this.taskIndex } })
+    );
   }
 
   deleteTask(): void {

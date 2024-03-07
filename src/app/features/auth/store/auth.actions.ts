@@ -3,12 +3,6 @@ import { LoginData, LoginResponse } from '../models/auth.interface';
 
 const prefix = '[Auth]';
 
-export const setToken = createAction(
-  `${prefix} set token`,
-  props<{
-    token: string;
-  }>()
-);
 export const login = createAction(
   `${prefix} login`,
   props<{
@@ -22,3 +16,4 @@ export const loginSuccess = createAction(
   }>()
 );
 export const requestFail = createAction(`${prefix} request fail`);
+export const logout = createAction(`${prefix} logout`);
