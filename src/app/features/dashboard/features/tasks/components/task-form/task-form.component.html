@@ -7,7 +7,7 @@
   [(visible)]="taskFormDialogVisibility"
   (onHide)="closeDialog()"
   [appendTo]="'body'"
-  [header]="'Add Task'"
+  [header]="taskFormMode + ' Task'"
 >
   <form
     class="form-container d-flex flex-column justify-content-center gap-2 px-2 mt-2"
@@ -17,14 +17,16 @@
       rows="5"
       cols="30"
       pInputTextarea
-      formControlName="task"
+      formControlName="title"
     ></textarea>
 
     <div class="form-group d-flex justify-content-center">
-      <p-button label="Add" [styleClass]="'btn btn-primary'"></p-button>
-      <!-- [loading]="httpLoading"
-        (onClick)="login()"
-        [disabled]="loginForm.invalid" -->
+      <p-button
+        [label]="taskFormMode"
+        [styleClass]="'btn btn-primary'"
+        (onClick)="submit()"
+        [disabled]="taskForm.invalid"
+      ></p-button>
     </div>
   </form>
 </p-dialog>

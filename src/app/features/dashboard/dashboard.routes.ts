@@ -7,6 +7,11 @@ export const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
+        path: '',
+        redirectTo: 'tasks',
+        pathMatch: 'full',
+      },
+      {
         path: 'tasks',
         loadChildren: () =>
           import('./features/tasks/tasks.module').then((m) => m.TasksModule),

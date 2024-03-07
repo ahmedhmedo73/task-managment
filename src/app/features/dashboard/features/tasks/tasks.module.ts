@@ -8,7 +8,6 @@ import { TaskCardComponent } from './components/task-card/task-card.component';
 import { TaskFormComponent } from './components/task-form/task-form.component';
 import { SharedModule } from '../../../../shared/shared.module';
 import { CommonModule } from '@angular/common';
-import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [

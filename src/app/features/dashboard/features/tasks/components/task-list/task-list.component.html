@@ -1,23 +1,27 @@
 <div class="container-fluid p-0 mb-5">
   <div class="row g-4">
-    @for(list of taskList; track list.icon){
+    @for(list of taskList; track list.category.icon;let categoryIndex = $index){
     <div class="col-md">
       <div
         class="border-radius-8px p-12px"
-        [ngStyle]="{ border: list.border, background: list.background }"
+        [ngStyle]="{
+          border: list.category.border,
+          background: list.category.background
+        }"
       >
         <div class="task-list-header d-flex gap-3 mb-14px">
-          <img [src]="list.icon" [alt]="list.category" />
-          <h5 class="list-title m-0" [ngStyle]="{ color: list.color }">
-            {{ list.category }}
+          <img [src]="list.category.icon" [alt]="list.category.name" />
+          <h5 class="list-title m-0" [ngStyle]="{ color: list.category.color }">
+            {{ list.category.name }}
           </h5>
         </div>
         <div class="task-card-container d-flex flex-column gap-3">
-          @for(task of list.tasks; track task.image){
+          @for(task of list.tasks; track task.image;let taskIndex = $index){
           <app-task-card
-            [image]="task.image"
-            [task]="task.title"
-            [border]="list.border"
+            [categoryIndex]="categoryIndex"
+            [taskIndex]="taskIndex"
+            [task]="task"
+            [border]="list.category.border"
           />
           }
         </div>

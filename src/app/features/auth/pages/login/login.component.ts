@@ -23,7 +23,7 @@ export class LoginComponent {
   getIsLoading() {
     this.subscriptionList.push(
       this.store.select(selectIsLoading).subscribe({
-        next: (data) => {
+        next: (data: boolean) => {
           this.httpLoading = data;
         },
       })
@@ -41,7 +41,7 @@ export class LoginComponent {
     }
   }
   ngOnDestroy(): void {
-    this.subscriptionList.forEach((subscription) => {
+    this.subscriptionList.forEach((subscription: Subscription) => {
       subscription.unsubscribe();
     });
   }

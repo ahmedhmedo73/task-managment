@@ -3,17 +3,17 @@
   [ngStyle]="{ border }"
 >
   <div class="task-header d-flex justify-content-between">
-    <img [src]="image" alt="" />
+    <img [src]="task.image" alt="" />
     <div class="task-actions d-flex gap-1">
-      <button class="btn p-0">
-        <img src="assets/images/edit.svg" alt="edit task" />
+      <button class="btn p-0" (click)="updateTask()">
+        <img src="assets/images/edit.svg" alt="update task" />
       </button>
-      <button class="btn p-0">
+      <button class="btn p-0" (click)="deleteTask()">
         <img src="assets/images/delete.svg" alt="delete task" />
       </button>
     </div>
   </div>
   <p class="m-0">
-    {{ task }}
+    {{ task.title }}
   </p>
 </div>

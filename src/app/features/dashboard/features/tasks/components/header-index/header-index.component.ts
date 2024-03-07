@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { TasksService } from '../../services/tasks.service';
+import { Store } from '@ngrx/store';
+import { OpenTaskFormDialog } from '../../store/tasks.actions';
 
 @Component({
   selector: 'app-header-index',
@@ -9,9 +10,9 @@ import { TasksService } from '../../services/tasks.service';
 })
 export class HeaderIndexComponent {
   faPlus = faPlus;
-  constructor(private tasksService: TasksService) {}
+  constructor(private store: Store) {}
 
   openTaskFormDialog(): void {
-    this.tasksService.openTaskformDialog();
+    this.store.dispatch(OpenTaskFormDialog({ taskFormMode: 'Add' }));
   }
 }
