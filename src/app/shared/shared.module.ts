@@ -8,6 +8,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ToastModule } from 'primeng/toast';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterOutlet } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { InputTextModule } from 'primeng/inputtext';
 
 let modules = [
   CommonModule,
@@ -17,9 +19,11 @@ let modules = [
   ReactiveFormsModule,
   FormsModule,
   InputTextareaModule,
+  InputTextModule,
   ToastModule,
   HttpClientModule,
   RouterOutlet,
+  TranslateModule,
 ];
 
 @NgModule({
