@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TaskFormComponent } from './task-form.component';
+import { provideMockStore } from '@ngrx/store/testing';
+import { SharedModule } from '../../../../../../shared/shared.module';
 
 describe('TaskFormComponent', () => {
   let component: TaskFormComponent;
@@ -8,7 +10,9 @@ describe('TaskFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TaskFormComponent]
+      declarations: [TaskFormComponent],
+      imports : [SharedModule],
+      providers : [provideMockStore({})]
     })
     .compileComponents();
     

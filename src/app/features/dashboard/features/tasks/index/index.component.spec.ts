@@ -1,6 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { IndexComponent } from './index.component';
+import { HeaderIndexComponent } from '../components/header-index/header-index.component';
+import { SidebarComponent } from '../../../components/sidebar/sidebar.component';
+import { provideMockStore } from '@ngrx/store/testing';
+import { TaskListComponent } from '../components/task-list/task-list.component';
+import { TaskFormComponent } from '../components/task-form/task-form.component';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 
 describe('IndexComponent', () => {
   let component: IndexComponent;
@@ -8,7 +14,9 @@ describe('IndexComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [IndexComponent]
+      declarations: [IndexComponent,HeaderIndexComponent,SidebarComponent,TaskListComponent,TaskFormComponent,TranslateLoader],
+      imports : [TranslateModule.forRoot()],
+      providers : [provideMockStore({})]
     })
     .compileComponents();
     

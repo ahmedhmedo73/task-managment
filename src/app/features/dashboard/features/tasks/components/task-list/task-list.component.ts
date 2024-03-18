@@ -20,11 +20,13 @@ export class TaskListComponent {
   }
 
   getTasks(): void {
-    this.store.select(selectTasks).subscribe({
-      next: (data: ITasks[]) => {
-        this.taskList = data;
-      },
-    });
+    this.subscriptionList.push(
+      this.store.select(selectTasks).subscribe({
+        next: (data: ITasks[]) => {
+          this.taskList = data;
+        },
+      })
+    )
   }
 
   ngOnDestroy(): void {

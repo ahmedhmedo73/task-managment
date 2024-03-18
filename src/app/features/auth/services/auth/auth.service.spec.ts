@@ -1,21 +1,24 @@
 import { TestBed } from '@angular/core/testing';
+import { provideMockStore } from '@ngrx/store/testing';
 
-import { AuthenticationService } from './auth.service';
+import { AuthService } from './auth.service';
 import {
   HttpClientTestingModule,
   HttpTestingController,
 } from '@angular/common/http/testing';
-import { environment } from 'src/app/core/environments/environment';
+import { environment } from '../../../../core/environments/environment';
+import { MessageService } from 'primeng/api';
 
-describe('AuthenticationService', () => {
-  let service: AuthenticationService;
+describe('AuthService', () => {
+  let service: AuthService;
   let testingController: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
+      providers : [provideMockStore({}),MessageService]
     });
-    service = TestBed.inject(AuthenticationService);
+    service = TestBed.inject(AuthService);
     testingController = TestBed.inject(HttpTestingController);
   });
 
@@ -32,7 +35,7 @@ describe('AuthenticationService', () => {
           expect(response.token).toBe('QpwL5tke4Pnpja7X4');
         },
       });
-    const mockReq = testingController.expectOne(environment.endpoint + 'login');
+    const mockReq = testingController.expectOne(environment.authBaseURL + 'login');
     expect(mockReq.request.method).toEqual('POST');
     mockReq.flush({ token: 'QpwL5tke4Pnpja7X4' });
   });
