@@ -7,7 +7,7 @@
   [(visible)]="taskFormDialogVisibility"
   (onHide)="closeDialog()"
   [appendTo]="'body'"
-  [header]="taskFormMode + ' Task'"
+  [header]="taskFormMode + ' Task' | translate"
 >
   <form
     class="form-container d-flex flex-column justify-content-center gap-2 px-2 mt-2"

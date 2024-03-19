@@ -7,6 +7,7 @@ import { TaskListComponent } from './components/task-list/task-list.component';
 import { TaskCardComponent } from './components/task-card/task-card.component';
 import { TaskFormComponent } from './components/task-form/task-form.component';
 import { SharedModule } from '../../../../shared/shared.module';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,6 @@ import { SharedModule } from '../../../../shared/shared.module';
     TaskCardComponent,
     TaskFormComponent,
   ],
-  imports: [RouterModule.forChild(routes), SharedModule],
+  imports: [RouterModule.forChild(routes), SharedModule,ButtonModule],
 })
 export class TasksModule {}

@@ -10,10 +10,9 @@ describe('TaskListComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [TaskListComponent],
-      providers : [provideMockStore()]
-    })
-    .compileComponents();
-    
+      providers: [provideMockStore()],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(TaskListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

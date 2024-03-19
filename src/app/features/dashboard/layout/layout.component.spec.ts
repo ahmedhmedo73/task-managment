@@ -7,7 +7,8 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { provideMockStore } from '@ngrx/store/testing';
 import { MessageService } from 'primeng/api';
 import { RouterModule } from '@angular/router';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { SharedModule } from '../../../shared/shared.module';
 
 describe('LayoutComponent', () => {
   let component: LayoutComponent;
@@ -16,11 +17,15 @@ describe('LayoutComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [LayoutComponent, SidebarComponent, NavbarComponent],
-      imports :[HttpClientTestingModule,RouterModule.forRoot([]),TranslateModule],
-      providers : [provideMockStore({}),MessageService,TranslateService]
-    })
-    .compileComponents();
-    
+      imports: [
+        HttpClientTestingModule,
+        RouterModule.forRoot([]),
+        TranslateModule.forRoot(),
+        SharedModule,
+      ],
+      providers: [provideMockStore({}), MessageService],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(LayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

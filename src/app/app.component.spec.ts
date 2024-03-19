@@ -17,16 +17,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  xit(`should have the 'task-managment' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('task-managment');
-  });
+  // it(`should have the 'task-managment' title`, () => {
+  //   const fixture = TestBed.createComponent(AppComponent);
+  //   const app = fixture.componentInstance;
+  //   expect(app.title).toEqual('task-managment');
+  // });
 
-  xit('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, task-managment');
-  });
+  // it('should render title', () => {
+  //   const fixture = TestBed.createComponent(AppComponent);
+  //   fixture.detectChanges();
+  //   const compiled = fixture.nativeElement as HTMLElement;
+  //   expect(compiled.querySelector('h1')?.textContent).toContain('Hello, task-managment');
+  // });
 });

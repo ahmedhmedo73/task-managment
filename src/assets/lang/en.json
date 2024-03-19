@@ -11,5 +11,7 @@
   "Username": "Username",
   "Password": "Password",
   "Forgot password?": "Forgot password?",
-  "LOGIN": "LOGIN"
+  "LOGIN": "LOGIN",
+  "Add Task": "Add Task",
+  "Update Task": "Update Task"
 }

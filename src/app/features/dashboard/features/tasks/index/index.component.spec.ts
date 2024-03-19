@@ -6,7 +6,8 @@ import { SidebarComponent } from '../../../components/sidebar/sidebar.component'
 import { provideMockStore } from '@ngrx/store/testing';
 import { TaskListComponent } from '../components/task-list/task-list.component';
 import { TaskFormComponent } from '../components/task-form/task-form.component';
-import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { SharedModule } from '../../../../../shared/shared.module';
 
 describe('IndexComponent', () => {
   let component: IndexComponent;
@@ -14,12 +15,17 @@ describe('IndexComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [IndexComponent,HeaderIndexComponent,SidebarComponent,TaskListComponent,TaskFormComponent,TranslateLoader],
-      imports : [TranslateModule.forRoot()],
-      providers : [provideMockStore({})]
-    })
-    .compileComponents();
-    
+      declarations: [
+        IndexComponent,
+        HeaderIndexComponent,
+        SidebarComponent,
+        TaskListComponent,
+        TaskFormComponent,
+      ],
+      imports: [TranslateModule.forRoot(), SharedModule],
+      providers: [provideMockStore({})],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(IndexComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

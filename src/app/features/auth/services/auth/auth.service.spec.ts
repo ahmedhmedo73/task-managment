@@ -16,7 +16,7 @@ describe('AuthService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers : [provideMockStore({}),MessageService]
+      providers: [provideMockStore({}), MessageService],
     });
     service = TestBed.inject(AuthService);
     testingController = TestBed.inject(HttpTestingController);
@@ -35,7 +35,9 @@ describe('AuthService', () => {
           expect(response.token).toBe('QpwL5tke4Pnpja7X4');
         },
       });
-    const mockReq = testingController.expectOne(environment.authBaseURL + 'login');
+    const mockReq = testingController.expectOne(
+      environment.authBaseURL + 'login'
+    );
     expect(mockReq.request.method).toEqual('POST');
     mockReq.flush({ token: 'QpwL5tke4Pnpja7X4' });
   });

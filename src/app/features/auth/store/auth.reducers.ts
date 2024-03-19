@@ -31,6 +31,7 @@ export const AuthReducer = createReducer<IAuthState>(
     };
   }),
   on(AuthActions.logout, (state) => {
+    localStorage.setItem('token', '');
     return {
       ...state,
       isLoggedIn: false,
