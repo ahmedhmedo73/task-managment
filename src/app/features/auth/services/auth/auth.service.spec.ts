@@ -28,7 +28,7 @@ describe('AuthService', () => {
 
   it('should login successfully', () => {
     service
-      .login({ email: 'eve.holt@reqres.in', password: 'cityslicka' })
+      .login({ email: 'eve.holt@reqres.i', password: 'cityslicka' })
       .subscribe({
         next: (response) => {
           expect(response).toBeTruthy();

@@ -98,8 +98,6 @@ export class TaskFormComponent {
   }
   updateTask(): void {
     if (this.taskForm.valid) {
-      console.log(this.taskForm.value, 'this.taskForm.value');
-
       this.store.dispatch(
         UpdateTask({
           task: this.taskForm.value,

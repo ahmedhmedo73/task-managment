@@ -6,8 +6,8 @@ import { provideMockStore } from '@ngrx/store/testing';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent,TranslateModule.forChild()],
-      providers : [provideMockStore({}),TranslateStore]
+      imports: [AppComponent, TranslateModule.forChild()],
+      providers: [provideMockStore({}), TranslateStore],
     }).compileComponents();
   });
 

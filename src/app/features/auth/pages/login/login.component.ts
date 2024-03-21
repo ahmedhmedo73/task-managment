@@ -31,7 +31,10 @@ export class LoginComponent {
   }
   createLoginForm(): void {
     this.loginForm = this.formBuilder.group({
-      email: ['eve.holt@reqres.in', Validators.required],
+      email: [
+        'eve.holt@reqres.in',
+        [Validators.required, Validators.minLength(8)],
+      ],
       password: ['cityslicka', Validators.required],
     });
   }
